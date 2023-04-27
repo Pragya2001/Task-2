@@ -1,0 +1,85 @@
+The following are the details about the API, including the types of requests to be performed, base URL, API Endpoints, Payload, and the description about the API.
+
+Base URL: http://localhost:3000/api/v3
+
+1. Create a new nudge
+    API Endpoint: /app/nudges
+
+    Request Type: POST
+
+    Payload: 
+    {
+        "event_id": "<unique id of the event>",
+        "title": "<title of the nudge>",
+        "image": "<binary data of the image>",
+        "time": "<timestamp of when to send the nudge>",
+        "description": "<description of the nudge>",
+        "icon": "<binary data of the icon>",
+        "invitation": "<one line invitation for the nudge>"
+    }
+
+    Description: This endpoint is used to create a new nudge for an event. It requires the event_id, title, image, time, description, icon, and invitation fields in the payload.
+
+    Response: 
+    {
+        "nudge_id": "<unique id of the created nudge>"
+    }
+
+2. Get a nudge by its unique id
+    API Endpoint: /app/nudges/:nudge_id
+
+    Request Type: GET
+
+    Payload: No payload is required for this operation.
+
+    Description: This endpoint is used to get a nudge by its unique id. It requires the nudge_id parameter in the URL.
+
+    Response: 
+    {
+        "event_id": "<unique id of the event>",
+        "title": "<title of the nudge>",
+        "image": "<binary data of the image>",
+        "time": "<timestamp of when to send the nudge>",
+        "description": "<description of the nudge>",
+        "icon": "<binary data of the icon>",
+        "invitation": "<one line invitation for the nudge>"
+    }
+
+3. Update a nudge by its unique id
+    API Endpoint: /app/nudges/:nudge_id
+
+    Request Type: PUT
+
+    Payload: 
+    {
+        "event_id": "<unique id of the event>",
+        "title": "<title of the nudge>",
+        "image": "<binary data of the image>",
+        "time": "<timestamp of when to send the nudge>",
+        "description": "<description of the nudge>",
+        "icon": "<binary data of the icon>",
+        "invitation": "<one line invitation for the nudge>"
+    }
+
+    Description: This endpoint is used to update an existing nudge by its unique id. It requires the nudge_id parameter in the URL and the event_id, title, image, time, description, icon, and invitation fields in the payload.
+
+    Response: 
+    {
+        "message": "Nudge updated successfully"
+    }
+
+4. Delete a nudge by its unique id
+    API Endpoint: /app/nudges/:nudge_id
+
+    Request Type: DELETE
+
+    Payload: No payload is required for this operation.
+
+    Description: This endpoint allows the user to delete a nudge by its unique identifier (:nudge_id). The user must be authorized to delete the nudge.
+
+    Response:
+    {
+    "success": true,
+    "message": "Nudge successfully deleted"
+    }
+

@@ -1,0 +1,9 @@
+{
+    "event_id": "<unique id of the event>",
+    "title": "<title of the nudge>",
+    "image": "<binary data of the image>",
+    "time": "<timestamp of when to send the nudge>",
+    "description": "<description of the nudge>",
+    "icon": "<binary data of the icon>",
+    "invitation": "<one line invitation for the nudge>"
+}
